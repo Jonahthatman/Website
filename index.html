@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        html{
+            color: white;
+            background-color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            margin: 0;
+        }
+        .inner{
+            display: flex;
+            flex-direction: row;
+            width: calc(100% - 20px);
+            border-radius: 35px;
+            overflow: hidden;
+            overflow-x: scroll;
+        }
+        .bottomnav{
+            overflow: hidden;
+            width: clamp(0px, calc(100% - 20px), 500px);
+            background-color: rgba(14, 14, 14, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 45px;
+            padding: 10px 0px;
+            border-style: none;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 50%;
+            bottom: 10px;
+            translate: -50%;
+        }
+    .bottomnav label {
+        margin: 0;
+        text-align: center;
+        display: block;
+        padding: 20px 0px;
+        width: 100%;
+        font-size: 11px;
+        background-color: rgb(15, 15, 15);
+        transition: ease-in-out;
+        transition-duration: 0.1s;
+        color:rgb(35, 35, 35);
+        height: 15px;
+        }
+    .bottomnav input[type="radio"] {
+        opacity: 0;
+          position: fixed;
+          width: 0;
+    }
+    .bottomnav input[type="radio"]:checked + label {
+      background-color: transparent;
+      background: linear-gradient(rgb(16, 147, 255), rgb(34, 192, 255));
+      color: rgb(35, 35, 35);
+        }
+    .bottomnav input[type="radio"]:not(:checked) + label {
+        font-size: 0px;
+    }
+    .bottomnav input[type="radio"]:not(:checked) + label div {
+        color: white;
+    }
+    .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  display: inline-block;
+  line-height: 0;
+  transform: translateY(7.5px);
+  text-transform: none;
+  letter-spacing: 0;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  text-align: center;
+}
+.bottomnav label div{
+    height: 15px;
+    transform: translateY(0px);
+    transition: ease-in-out;
+    transition-duration: 0.1s;
+}
+.bottomnav input[type="radio"]:checked + label div {
+    transform: translateY(-5px);
+}
+.bottomnav input[type="radio"]:checked + label div span {
+    font-size: 25px;
+}
+.topnav{
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: rgba(14, 14, 14, 0.5);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    z-index: 100000;
+    padding: 10px 0px;
+    position: fixed;
+}
+.logo{
+    font-display: block;
+    height: 1;
+    line-height: 0.8;
+    font-size: 30px;
+    font-weight: 900;
+}
+.logob{
+    background-color: rgba(66, 66, 66, 0.2);
+    width: auto;
+    width: 76px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translateX(10px);
+    padding: 15px;
+    border-radius: 45px;
+}
+.logo{
+
+    background: linear-gradient(to right, rgb(0, 81, 255),
+    rgb(16, 147, 255), rgb(34, 192, 255), rgb(16, 147, 255), 
+    rgb(0, 81, 255));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+    
+}
+@keyframes animate-gradient {
+        to {
+            background-position: 200%;
+        }
+    }
+    </style>
+    <script>
+        function show(elementID) {
+  const ele = document.getElementById(elementID);
+  if (!ele) {
+    alert("no such element");
+    return;
+  }
+
+  const pages = document.getElementsByClassName('page');
+  for (let i = 0; i < pages.length; i++) {
+    pages[i].style.display = 'none';
+  }
+
+  ele.style.display = 'block';
+}
+    </script>
+</head>
+<body>
+    <header class="topnav">
+        <div class="logob">
+             <div class="logo">
+                 LOGO
+             </div>
+        </div>
+        </header>
+        <br><br><br>
+      <div id="Page1" class="page" >
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+      </div>
+      <div id="Page2" class="page" style="display:none">
+        <p>Content of page 2</p>
+      </div>
+      <div id="Page3" class="page" style="display:none">
+        <p>Content of page 3</p>
+      </div>
+      <div id="Page4" class="page" style="display:none">
+        <p>Content of page 4</p>
+      </div>
+      <div id="Page5" class="page" style="display:none">
+        <p>Content of page 5</p>
+      </div>
+
+    <nav class="bottomnav">
+        <div class="inner">
+            <input type="radio" name="group" id="1" checked onclick="show('Page1');">
+            <label for="1">
+                <div><span class="material-symbols-outlined">home</span></div>
+                Home
+            </label>
+            <input type="radio" name="group" id="2" onclick="show('Page2');">
+            <label for="2">
+                <div><span class="material-symbols-outlined">dashboard</span></div>
+                Dashboard
+            </label>
+            <input type="radio" name="group" id="3" onclick="show('Page3');">
+            <label for="3">
+                <div><span class="material-symbols-outlined">explore</span></div>
+                Explore
+            </label>
+            <input type="radio" name="group" id="4" onclick="show('Page4');">
+            <label for="4">
+                <div><span class="material-symbols-outlined">help</span></div>
+                Help
+            </label>
+            <input type="radio" name="group" id="5" onclick="show('Page5');">
+            <label for="5">
+                <div><span class="material-symbols-outlined">settings</span></div>
+                Settings
+            </label>
+        </div>
+    </nav>
+</body>
+</html>
