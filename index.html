@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        :root{
+            --base-color: rgb(255, 255, 255);
+            --base-varient: rgb(220, 220, 220);;
+            --base-glass: rgba(220, 220, 220, 0.3);
+            --text-color: rgb(0, 0, 0);
+            --secondary-text: rgb(255, 255, 255);
+            --primary-color: rgb(220, 220, 220);
+            --accent-color: linear-gradient(rgb(16, 147, 255), rgb(34, 192, 255));
+            --tertiary-color: rgb(16, 147, 255);
+        }
+        .darkmode{
+            --base-color: rgb(15, 15, 15);
+            --base-varient: rgb(20, 20, 20);;
+            --base-glass: rgba(40, 40, 40, 0.3);
+            --text-color: white;
+            --secondary-text: rgb(0, 0, 0);
+            --primary-color: rgb(45, 45, 45);
+            --accent-color: linear-gradient(rgb(16, 147, 255), rgb(34, 192, 255));
+            --tertiary-color: rgb(16, 147, 255);
+        }
+        body{
+            color: var(--text-color);
+            background-color: var(--base-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            margin: 0;
+        }
+        
+        .inner{
+            display: flex;
+            flex-direction: row;
+            width: calc(100% - 20px);
+            border-radius: 35px;
+            background-color: var(--base-glass);
+            overflow: hidden;
+            overflow-x: scroll;
+        }
+        .bottomnav{
+            overflow: hidden;
+            width: clamp(0px, calc(100% - 20px), 500px);
+            background-color: var(--base-glass);
+            backdrop-filter: blur(30px);
+            border-radius: 45px;
+            padding: 10px 0px;
+            border-style: none;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 50%;
+            bottom: 10px;
+            translate: -50%;
+        }
+    .bottomnav label {
+        margin: 0;
+        text-align: center;
+        display: block;
+        padding: 20px 0px;
+        width: 100%;
+        font-size: 11px;
+        background-color: transparent;
+        transition: ease-in-out;
+        transition-duration: 0.1s;
+        color: var(--secondary-text);
+        height: 15px;
+        }
+    .bottomnav input[type="radio"] {
+        opacity: 0;
+          position: fixed;
+          width: 0;
+    }
+    .themebutton {
+        opacity: 0;
+          position: fixed;
+          width: 50px;
+    }
+    .bottomnav input[type="radio"]:checked + label {
+      background-color: transparent;
+      background: var(--accent-color);
+      color: var(--secondary-text);
+        }
+    .bottomnav input[type="radio"]:not(:checked) + label {
+        font-size: 0px;
+    }
+    .bottomnav input[type="radio"]:not(:checked) + label div {
+        color: var(--text-color);
+    }
+    .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  display: inline-block;
+  line-height: 0;
+  transform: translateY(7.5px);
+  text-transform: none;
+  letter-spacing: 0;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  text-align: center;
+}
+.bottomnav label div{
+    height: 15px;
+    transform: translateY(0px);
+    transition: ease-in-out;
+    transition-duration: 0.1s;
+}
+.bottomnav input[type="radio"]:checked + label div {
+    transform: translateY(-5px);
+}
+.bottomnav input[type="radio"]:checked + label div span {
+    font-size: 25px;
+}
+.changetheme{
+    padding: 15px 0px;
+}
+.changetheme label{
+    padding: 15px 30px;
+  font-size: 15px;
+   top: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: var(--base-glass);
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.changetheme input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.checkmark{
+    height: 25px;
+    width: 25px;
+    background-color: black;
+}
+
+.topnav{
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: var(--base-glass);
+    backdrop-filter: blur(30px);
+    width: 100%;
+    z-index: 100000;
+    padding: 10px 0px;
+    position: fixed;
+    display: flex;
+}
+.logo{
+    font-display: block;
+    line-height: 1.5;
+    font-size: 30px;
+    font-weight: 900;
+}
+.logob{
+    transform: translateX(20px);
+    text-align: left;
+    width: calc(50% - 40px);
+    height: 45px;
+}
+.logo{
+    background: linear-gradient(to right, rgb(0, 81, 255),
+    rgb(16, 147, 255), rgb(34, 192, 255), rgb(16, 147, 255), 
+    rgb(0, 81, 255));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+.page{
+    margin-left: 10px;
+    margin-top: 75px;
+}
+@keyframes animate-gradient {
+        to {
+            background-position: 200%;
+        }
+    }
+    </style>
+    <script>
+        function show(elementID) {
+  const ele = document.getElementById(elementID);
+  if (!ele) {
+    alert("no such element");
+    return;
+  }
+
+  const pages = document.getElementsByClassName('page');
+  for (let i = 0; i < pages.length; i++) {
+    pages[i].style.display = 'none';
+  }
+
+  ele.style.display = 'block';}
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('themebutton');
+    const body = document.body;
+
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            body.classList.add('darkmode');
+        } else {
+            body.classList.remove('darkmode');
+        }
+    });
+});
+        </script>
+</head>
+<body id="light">
+    <header class="topnav">
+        <div class="logob">
+             <div class="logo">
+                 LOGO
+             </div>
+        </div>
+    </header>
+      <div id="Page1" class="page">
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+        <p>Content of page 1</p>
+      </div>
+      <div id="Page2" class="page" style="display:none">
+        <p>Content of page 2</p>
+      </div>
+      <div id="Page3" class="page" style="display:none">
+        <p>Content of page 3</p>
+      </div>
+      <div id="Page4" class="page" style="display:none">
+        <p>Content of page 4</p>
+      </div>
+      <div id="Page5" class="page" style="display:none">
+        <div class="changetheme">
+             <input type="checkbox" id="themebutton"></input>
+             <div class="checkmark"></div>
+             <label for="themebutton" id="themelabel">Dark</label>
+             
+        </div>
+      </div>
+
+    <nav class="bottomnav">
+        <div class="inner">
+            <input type="radio" name="group" id="1" checked onclick="show('Page1');">
+            <label for="1">
+                <div><span class="material-symbols-outlined">home</span></div>
+                Home
+            </label>
+            <input type="radio" name="group" id="2" onclick="show('Page2');">
+            <label for="2">
+                <div><span class="material-symbols-outlined">dashboard</span></div>
+                Dashboard
+            </label>
+            <input type="radio" name="group" id="3" onclick="show('Page3');">
+            <label for="3">
+                <div><span class="material-symbols-outlined">explore</span></div>
+                Explore
+            </label>
+            <input type="radio" name="group" id="4" onclick="show('Page4');">
+            <label for="4">
+                <div><span class="material-symbols-outlined">help</span></div>
+                Help
+            </label>
+            <input type="radio" name="group" id="5" onclick="show('Page5');">
+            <label for="5">
+                <div><span class="material-symbols-outlined">settings</span></div>
+                Settings
+            </label>
+        </div>
+    </nav>
+</body>
+</html>
